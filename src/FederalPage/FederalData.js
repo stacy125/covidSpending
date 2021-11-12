@@ -18,8 +18,6 @@ function FederalData({ filterList }) {
   const federalFilters = ["Recipient Name", "City", "Country", "Award Id", "Start Date", "End Date", "Total Award Amount", "cfda title", "Award Description", "Award Type"]
 
   
-
-
   const getFederalData = async (urlParams) => {
     await fetch(
       `https://covid-19-spending.herokuapp.com//federal?pageSize=&page=${pageNumber}${urlParams}`,
