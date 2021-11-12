@@ -72,10 +72,6 @@ function FederalData({ filterList }) {
   }, [pageNumber]);
 
 
- 
-
-
-
   useEffect(() => {
     getFederalData("");
   }, []);
