@@ -1,9 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./FederalData.css";
 import FederalRow from "./FederalRow";
 import FederalFilterUI from "./FederalFilterUI";
 
-function FederalData({ filterList }) {
+function FederalData() {
   const [federalData, setFederalData] = useState([]);
   // const [show, setShow] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
@@ -20,7 +20,7 @@ function FederalData({ filterList }) {
   
   const getFederalData = async (urlParams) => {
     await fetch(
-      `https://covid-19-spending.herokuapp.com//federal?pageSize=&page=${pageNumber}${urlParams}`,
+      `https://covid-19-spending.herokuapp.com/federal?pageSize=&page=${pageNumber}${urlParams}`,
 
       {
         headers: {
@@ -69,12 +69,12 @@ function FederalData({ filterList }) {
 
     getOuterBounds();
 
-  }, [pageNumber]);
+  });
 
 
   useEffect(() => {
     getFederalData("");
-  }, []);
+  });
 
   
   const getResultData = (e) => {
